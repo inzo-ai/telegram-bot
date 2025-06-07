@@ -34,8 +34,8 @@ Try Hosted Demo- https://t.me/inzoaibot
 
 1.  **Clone the repository (if applicable):**
     ```bash
-    git clone <repository-url>
-    cd <repository-directory>
+    git clone https://github.com/inzo-ai/telegram-bot
+    cd telegram-bot
     ```
 
 2.  **Install dependencies:**
@@ -44,14 +44,14 @@ Try Hosted Demo- https://t.me/inzoaibot
     ```
 
 3.  **Create ABI directory:**
-    Create an `abi/` directory in the root of the project and place your smart contract ABI JSON files there:
+    Create an `abi/` directory in the root of the project and place your smart contract ABI JSON files there (Get these from - https://github.com/inzo-ai/new-contracts)
     *   `claimOracleRelay.abi.json`
     *   `inzoUSD.abi.json`
     *   `insuranceFundManager.abi.json`
     *   `policyLedger.abi.json`
 
 4.  **Set up environment variables:**
-    Create a `.env` file in the root of the project. Copy the contents from `.env.example` (if provided) or use the template below and fill in your actual values:
+    Create a `.env` file in the root of the project:
 
     ```env
     # Telegram Bot
@@ -86,12 +86,18 @@ Try Hosted Demo- https://t.me/inzoaibot
 Once the setup is complete, you can start the bot using:
 
 ```bash
+
 node bot.js
 
+```
 
 The bot will connect to Telegram and start listening for commands.
 
-Project Structure
+
+
+#Project Structure
+
+
 
 The project is organized into several directories to separate concerns:
 
@@ -119,8 +125,3 @@ External Oracle: The claim decision process relies on an external AI Oracle serv
 
 Test Network: This bot is designed to work with a test EVM network where WND is used for gas and InzoUSD is a custom ERC20 token.
 
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-IGNORE_WHEN_COPYING_END
