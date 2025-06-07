@@ -92,36 +92,3 @@ node bot.js
 ```
 
 The bot will connect to Telegram and start listening for commands.
-
-
-
-#Project Structure
-
-
-
-The project is organized into several directories to separate concerns:
-
-abi/: Contains smart contract ABI JSON files.
-
-config/: Handles loading and validation of environment variables.
-
-handlers/: Contains the logic for different bot commands and message types (KYC, wallet, policy, claims, common).
-
-services/: Houses clients for interacting with external APIs (Persona, Tavus, Gemini Oracle) and blockchain services (ethers.js setup, contract instances).
-
-store/: Manages in-memory user state (e.g., KYC progress, active applications).
-
-utils/: Contains general utility functions.
-
-bot.js: The main entry point that initializes the bot and registers handlers.
-
-Important Notes
-
-Security: The bot stores user private keys in memory for demo purposes to manage their Inzo Wallets. This is NOT secure for a production environment. In a real application, users would manage their own private keys using a proper wallet solution.
-
-Error Handling: Basic error handling is in place, but it can be further enhanced for robustness.
-
-External Oracle: The claim decision process relies on an external AI Oracle service available at the GEMINI_ORACLE_ENDPOINT. This service is responsible for receiving claim details, making a decision (simulated AI approval), and then calling the submitClaimDecision function on the ClaimOracleRelay smart contract.
-
-Test Network: This bot is designed to work with a test EVM network where WND is used for gas and InzoUSD is a custom ERC20 token.
-
